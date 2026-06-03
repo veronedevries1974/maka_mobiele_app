@@ -1,9 +1,25 @@
-<div style="padding: 20px;">
-  <h1>Onze Activiteiten</h1>
-  <p>Kies hieronder een van onze activiteiten voor meer informatie.</p>
+<div class="body_parent">
+  <header>
+    <!-- De afbeelding en titels voor de activiteitenpagina -->
+    <h4 class="header_h4">Onze Activiteiten</h4>
+    <h1 class="header_h1">Ontdek wat er te doen is rondom Camping Maka.</h1>
+    <img src="https://images.pexels.com/photos/33107655/pexels-photo-33107655.jpeg" alt="Belgische Ardennen"></header>
 
-  <!-- Hier verschijnt de inhoud van Child2a (Wandelen) of Child2b (Kanoën) ONDER de tekst -->
-  <div class="activity-content" style="margin-top: 20px; border-top: 1px solid #ccc; padding-top: 20px;">
-    <router-outlet></router-outlet>
-  </div>
+  <main>
+    <div class="activiteiten-container">
+      <h2>Kies een activiteit</h2>
+      <p>Klik hieronder op een van de activiteiten om de details te bekijken.</p>
+
+      <!-- Snelmenu binnen de activiteitenpagina -->
+      <div class="activiteiten-menu">
+        <a routerLink="wandelen" routerLinkActive="active-link">🥾 Wandelen</a> | 
+        <a routerLink="kanoen" routerLinkActive="active-link">🛶 Kanoën</a>
+      </div>
+
+      <!-- Hier worden Child2a (Wandelen) of Child2b (Kanoën) ingeladen -->
+      <div class="activiteiten-sub-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
 </div>

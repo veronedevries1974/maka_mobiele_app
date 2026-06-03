@@ -1,41 +1,98 @@
-#container {
-  text-align: center;
-  margin-top: 16px; 
+/* Zorgt dat deze specifieke Angular component het hele scherm vult en centreert */
+:host {
+    display: flex !important;
+    justify-content: center; /* Horizontaal centreren */
+    align-items: center;     /* Verticaal centreren */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;         /* Zet de component vast op het volledige scherm */
+    top: 0;
+    left: 0;
+    background-color: #e9e9e9; /* De lichte achtergrond achter de kaart */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-#container strong {
+/* De centrale witte container van de camping info */
+.body_parent {
+    color: #333;
+    background-color: #ffffff;
+    
+    // Breedte instellingen
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    // Scroll functionaliteit
+    max-height: 85vh; /* Voorkomt dat de kaart groter wordt dan het scherm */
+    overflow-y: auto; /* Activeert de scrollbalk indien nodig */
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header element */
+header {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* H4 - Gecentreerd bovenaan */
+.header_h4 {
+    font-size: xx-large;
+    font-style: italic;
+    font-weight: bold;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    text-align: center; 
+    margin: 0 0 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* H1 - Gecentreerd onder de H4 */
+.header_h1 {
+    font-size: large;
+    font-style: italic;
+    font-weight: normal;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    text-align: center; 
+    margin: 0;          
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header img {
+    width: 50%; /* Verander dit percentage om de gewenste breedte te bepalen */
+    height: auto; /* Gewijzigd naar auto om vervorming te voorkomen */
+    display: block; /* Nodig om de afbeelding te kunnen centreren */
+    margin: 0 auto 15px auto; /* Centreert de afbeelding netjes in het midden */
+}
+
+/* Camping naam styling */
+.camping-name {
   font-size: 20px;
   line-height: 26px;
-  display: block; 
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
+/* Nettere marges voor de main teksten */
+main h2 {
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
-#container a {
-  text-decoration: none;
-}
-
-.first {
-    font-style: italic;
-    text-decoration: underline;
-    color: purple;
-}
-.second {
-    color: red;
-}
-.third {
-    color: blue;
-}
-
+/* Tabel Styling */
 #table1 {
-  width: 90% !important;        /* Geeft de tabel een breedte zodat centreren werkt */
-  max-width: 90% !important;
-  margin: 20px auto !important; /* De 'auto' zet de tabel exact in het midden van de pagina */
+  width: 100% !important;        
+  max-width: 100% !important;
+  margin: 20px auto !important; 
   text-align: left;
   background-color: aqua; 
   border: 5px solid black;
@@ -50,4 +107,8 @@
   td {
     padding: 10px; 
   }
+}
+
+.third {
+    color: blue;
 }

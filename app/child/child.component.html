@@ -1,34 +1,38 @@
-<ion-content>
-  <div class="prijslijst-layout">
-    <h2>Prijslijst</h2>
-    <p>Hieronder vindt u onze actuele tarieven.</p>
-    <strong>{{ name }}</strong>
-    
-    <!-- BETROUWBARE FOTOLINK: Dit is een direct bestand dat gegarandeerd inlaadt -->
+<div class="body_parent">
+  <header>
+    <h4 class="header_h4">Prijslijst</h4>
+    <h1 class="header_h1">Hieronder vindt u onze actuele tarieven.</h1><br>
     <img src="https://images.pexels.com/photos/33107655/pexels-photo-33107655.jpeg" alt="Belgische Ardennen">
-    
-    <!-- Prijslijst Tabel -->
-    <table id="table1">
-      <tr class="third">
-        <th>Tarieven</th>
-        <th>Hoogseizoen per nacht</th>
-        <th>Laagseizoen per nacht</th>
-      </tr>
-      <tr>
-        <td>Kampeerweide</td>
-        <td>€ 26,50</td>
-        <td>€ 21,00</td>
-      </tr>
-      <tr>
-        <td>Camperplaats</td>
-        <td>€ 26,50</td>
-        <td>€ 26,50</td>
-      </tr>
-      <tr>
-        <td>Blokhut</td>
-        <td>€ 82,00</td>
-        <td>€ 65,50</td>
-      </tr>
-    </table>
-  </div>
-</ion-content>
+  </header>
+  
+  <main>
+    <div class="prijslijst-layout">
+      <!-- Toont de naam vanuit de Angular component input indien aanwezig -->
+      <strong class="camping-name" *ngIf="name">{{ name }}</strong>
+      
+      <!-- Prijslijst Tabel -->
+      <table id="table1">
+        <tr class="third">
+          <th>Tarieven</th>
+          <th>Hoogseizoen per nacht</th>
+          <th>Laagseizoen per nacht</th>
+        </tr>
+        <tr>
+          <td>Kampeerweide</td>
+          <td>€ 26,50</td>
+          <td>€ 21,00</td>
+        </tr>
+        <tr>
+          <td>Camperplaats</td>
+          <td>€ 26,50</td>
+          <td>€ 26,50</td>
+        </tr>
+        <tr>
+          <td>Blokhut</td>
+          <td>€ 82,00</td>
+          <td>€ 65,50</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+</div>

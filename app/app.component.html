@@ -1,21 +1,12 @@
 <div class="page_framework"> 
   <div class="navigation"> 
     <ul> 
-      <!-- Knop Home naar ParentComponent -->
       <li><a routerLink="/" (click)="sluitMenu()">home</a></li> 
-      
-      <!-- Knop Prijslijst naar ChildComponent -->
       <li><a routerLink="/prijslijst" (click)="sluitMenu()">prijslijst</a></li> 
-      
-      <!-- Knop Activiteiten naar Child2Component -->
       <li>
-        <a routerLink="/activiteiten" (click)="toggleMenu($event)">activiteiten</a>
-        
-        <!-- Alleen zichtbaar als menuOpen op TRUE staat -->
+        <a href="#" (click)="toggleMenu($event)">activiteiten</a>
         <ul class="submenu" *ngIf="menuOpen">
-          <!-- Knop Wandelen naar Child2aComponent -->
           <li><a routerLink="/activiteiten/wandelen" (click)="sluitMenu()">Wandelen</a></li>
-          <!-- Knop Kanoen naar Child2bComponent -->
           <li><a routerLink="/activiteiten/kanoen" (click)="sluitMenu()">Kanoën</a></li> 
         </ul>
       </li>
@@ -23,6 +14,10 @@
   </div>
 
   <div class="page-content">
+    <!-- Hier worden de pagina's ingeladen -->
     <router-outlet></router-outlet>
+    
+    <!-- De footer staat hieronder en wordt door Flexbox naar de bodem gedrukt -->
+    <app-footer></app-footer>
   </div>
 </div>

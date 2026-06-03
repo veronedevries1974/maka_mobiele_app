@@ -1,29 +1,40 @@
 body { 
   margin: 0;
   padding: 0;
-  max-width: 400px;
-  margin: 0 auto;   
+  width: 100%;       
+  max-width: 100%;   
   background: rgb(163, 153, 153);
+  font-family: Verdana, sans-serif;
 }
 
-.page_framework { 
-  width: 100%;    
-  height: 100vh; 
-  background-color: rgb(212, 252, 253); 
+.page_framework {
+    display: block;
+    width: 100%;
+}
+
+/* --- INHOUD LAYOUT (GEFIXT) --- */
+.page-content {
+  display: block;
+  width: 100%;
+  /* Marges zorgen dat content keurig TUSSEN de vaste navigatie en footer scrolt */
+  padding-top: 60px !important;    
+  padding-bottom: 200px !important; 
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden !important; 
 }
 
+/* --- NAVIGATIE (GEFIXT MET FIXED POSITION) --- */
 .navigation { 
-  display: block !important;
+  position: fixed; /* Fixeert de balk aan de bovenkant van het scherm */
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background-color: #73ca73 !important; 
   min-height: 50px; 
   margin: 0;
   padding: 0;
-  z-index: 1000; 
+  z-index: 10000; /* Hoger dan de submenu's en content */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .navigation ul {
@@ -42,7 +53,6 @@ body {
 .navigation ul li a {
   text-decoration: none;
   color: #333;
-  font-family: Verdana, sans-serif;
   font-weight: bold;
 }
 
@@ -50,8 +60,7 @@ body {
   background-color: rgb(44, 199, 44);
 }
 
-/* --- HET UITKLAP MECHANISME --- */
-
+/* --- SUBMENU (UITKLAP) --- */
 .navigation ul li .submenu { 
   display: block !important; 
   position: absolute; 
@@ -60,7 +69,7 @@ body {
   width: 150px;
   margin: 0;
   padding: 0;
-  z-index: 9999; 
+  z-index: 10001; /* Altijd bovenop de navigatiebalk zelf */
   list-style-type: none !important;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); 
 }
@@ -70,20 +79,13 @@ body {
   background-color: rgb(182, 204, 182);
   padding: 12px 15px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  
-  &:hover {
-    background-color: rgb(142, 174, 142); 
-  }
 }
 
-/* --- INHOUD EN APPLICATIE LAYOUT --- */
-
-.page-content {
-  flex: 1;
-  height: 100%;
-  overflow: hidden !important; 
+.navigation ul li .submenu li:hover {
+  background-color: rgb(142, 174, 142); 
 }
 
+/* --- CONTENT ELEMENTEN --- */
 .page-content img {
   max-width: 100%;
   height: auto;
@@ -97,20 +99,17 @@ body {
   color: white;
   border: none;
   padding: 10px 15px;
-  font-family: Verdana, sans-serif;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 15px;
-
-  &:hover {
-    background-color: rgb(44, 199, 44);
-  }
 }
 
-/* --- DE DEFINITIEVE FIX VOOR DE PRIJSLIJST (AFBEELDING + TABEL) --- */
+.btn-terug:hover {
+  background-color: rgb(44, 199, 44);
+}
 
-/* Schakel de verborgen binnenmarges van Ionic uit */
+/* --- IONIC EN CONTAINER INSTELLINGEN --- */
 ion-content {
   --padding-top: 0px !important;
   --padding-bottom: 20px !important;
@@ -118,17 +117,16 @@ ion-content {
   --padding-end: 0px !important;   
 }
 
-/* De hoofdcontainer dwingt alle inhoud in een gecentreerde kolom */
+/* --- PRIJSLIJST FIXES --- */
 .prijslijst-layout {
   width: 100% !important;
   display: flex !important;
   flex-direction: column !important; 
-  align-items: center !important;    /* Centreert de tabel en afbeelding exact in het midden */
+  align-items: center !important;    
   padding: 20px 0 !important;
   box-sizing: border-box;
 }
 
-/* Zorgt dat de titels en teksten netjes links uitlijnen met de tabelrand */
 .prijslijst-layout h2, 
 .prijslijst-layout p, 
 .prijslijst-layout strong {
@@ -139,40 +137,35 @@ ion-content {
   display: block;
 }
 
-/* Forceert de afbeelding naar exact 90% breedte en centreert deze perfect */
 .prijslijst-layout img {
   width: 90% !important;        
   max-width: 90% !important;
   height: auto !important;
   display: block !important;
-  margin: 20px auto !important; /* 'auto' zet de afbeelding kaarsrecht in het midden */
+  margin: 20px auto !important; 
   border-radius: 8px !important; 
 }
 
-/* Zet de tabel op exact 90% breedte en centreert deze stabiel op de pagina */
 .prijslijst-layout #table1 {
   width: 90% !important;        
   max-width: 90% !important;
-  margin: 20px auto !important; /* 'auto' schuift de tabel naar het exacte midden */
+  margin: 20px auto !important; 
   text-align: left;
-  background-color: aqua;       /* Jouw gekozen aqua achtergrond */
-  border: 5px solid black;      /* Jouw dikke zwarte rand */
+  background-color: aqua;       
+  border: 5px solid black;      
   border-collapse: collapse; 
-  font-family: Verdana, sans-serif;
   font-size: 14px;
   box-sizing: border-box; 
+}
 
-  /* Cel-opmaak voor de koppen van de tabel */
-  th {
-    padding: 10px;
-    background-color: #1e3a8a;  /* Donkerblauwe th achtergrond */
-    color: #ffffff;            
-    border: 1px solid black;
-  }
+.prijslijst-layout #table1 th {
+  padding: 10px;
+  background-color: #1e3a8a;  
+  color: #ffffff;            
+  border: 1px solid black;
+}
 
-  /* Cel-opmaak voor de gewone rijen */
-  td {
-    padding: 10px; 
-    border: 1px solid black;
-  }
+.prijslijst-layout #table1 td {
+  padding: 10px; 
+  border: 1px solid black;
 }

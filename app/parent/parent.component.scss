@@ -1,0 +1,85 @@
+/* Zorgt dat deze specifieke Angular component het hele scherm vult en centreert */
+:host {
+    display: flex !important;
+    justify-content: center; /* Horizontaal centreren */
+    align-items: center;     /* Verticaal centreren */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;         /* Zet de component vast op het volledige scherm */
+    top: 0;
+    left: 0;
+    background-color: #e9e9e9; /* De lichte achtergrond achter de kaart */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* De centrale witte container van de camping info */
+.body_parent {
+    color: #333;
+    background-color: #ffffff;
+    
+    // Breedte instellingen
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    // Scroll functionaliteit
+    max-height: 85vh; /* Voorkomt dat de kaart groter wordt dan het scherm */
+    overflow-y: auto; /* Activeert de scrollbalk indien nodig */
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header element */
+header {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* H4 - Gecentreerd bovenaan */
+.header_h4 {
+    font-size: xx-large;
+    font-style: italic;
+    font-weight: bold;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    text-align: center; 
+    margin: 0 0 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* H1 - Gecentreerd onder de H4 */
+.header_h1 {
+    font-size: large;
+    font-style: italic;
+    font-weight: normal;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    text-align: center; 
+    margin: 0;          
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Nettere marges voor de main teksten */
+main h2 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+main p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+header img {
+    width: 50%; /* Verander dit percentage om de gewenste breedte te bepalen */
+    height: 50%; /* Zorgt ervoor dat de verhoudingen van de afbeelding kloppen */
+    display: block; /* Nodig om de afbeelding te kunnen centreren */
+    margin: 0 auto; /* Centreert de afbeelding netjes in het midden */
+}
