@@ -1,0 +1,53 @@
+#container {
+  text-align: center;
+  margin-top: 16px; 
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+  display: block; 
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.first {
+    font-style: italic;
+    text-decoration: underline;
+    color: purple;
+}
+.second {
+    color: red;
+}
+.third {
+    color: blue;
+}
+
+#table1 {
+  width: 90% !important;        /* Geeft de tabel een breedte zodat centreren werkt */
+  max-width: 90% !important;
+  margin: 20px auto !important; /* De 'auto' zet de tabel exact in het midden van de pagina */
+  text-align: left;
+  background-color: aqua; 
+  border: 5px solid black;
+  border-collapse: collapse; 
+
+  th {
+    padding: 10px;
+    background-color: #1e3a8a; 
+    color: #ffffff;            
+  }
+
+  td {
+    padding: 10px; 
+  }
+}

@@ -1,0 +1,28 @@
+<div class="page_framework"> 
+  <div class="navigation"> 
+    <ul> 
+      <!-- Knop Home naar ParentComponent -->
+      <li><a routerLink="/" (click)="sluitMenu()">home</a></li> 
+      
+      <!-- Knop Prijslijst naar ChildComponent -->
+      <li><a routerLink="/prijslijst" (click)="sluitMenu()">prijslijst</a></li> 
+      
+      <!-- Knop Activiteiten naar Child2Component -->
+      <li>
+        <a routerLink="/activiteiten" (click)="toggleMenu($event)">activiteiten</a>
+        
+        <!-- Alleen zichtbaar als menuOpen op TRUE staat -->
+        <ul class="submenu" *ngIf="menuOpen">
+          <!-- Knop Wandelen naar Child2aComponent -->
+          <li><a routerLink="/activiteiten/wandelen" (click)="sluitMenu()">Wandelen</a></li>
+          <!-- Knop Kanoen naar Child2bComponent -->
+          <li><a routerLink="/activiteiten/kanoen" (click)="sluitMenu()">Kanoën</a></li> 
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
