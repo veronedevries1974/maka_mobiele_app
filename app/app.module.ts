@@ -10,6 +10,7 @@ import { ChildComponent } from './child/child.component';
 import { Child2Component } from './child2/child2.component';
 import { Child2aComponent } from './child2a/child2a.component';
 import { Child2bComponent } from './child2b/child2b.component';
+import { Child3Component } from './child3/child3.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
     Child2Component,
     Child2aComponent,
     Child2bComponent,
+    Child3Component,
     FooterComponent
   ],
   imports: [

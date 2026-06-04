@@ -4,7 +4,6 @@
       <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="sluitMenu()">home</a></li> 
       <li><a routerLink="/child" routerLinkActive="active-link" (click)="sluitMenu()">prijslijst</a></li> 
       <li>
-        <!-- GECORRIGEERD: Linkt nu naar /child2 (activiteiten) en blijft actief bij subpagina's -->
         <a routerLink="/child2" 
            routerLinkActive="active-link" 
            [routerLinkActiveOptions]="{ exact: false }"
@@ -12,11 +11,11 @@
            activiteiten
         </a>
         <ul class="submenu" *ngIf="menuOpen">
-          <!-- GECORRIGEERD: Paden aangepast naar de nieuwe routing-structuur -->
-          <li><a routerLink="/child2/wandelen" routerLinkActive="active-sub-link" (click)="sluitMenu()">Wandelen</a></li>
-          <li><a routerLink="/child2/kanoen" routerLinkActive="active-sub-link" (click)="sluitMenu()">Kanoën</a></li> 
+          <li><a routerLink="/child2/child2a" routerLinkActive="active-sub-link">Wandelen</a></li>
+          <li><a routerLink="/child2/child2b" routerLinkActive="active-sub-link">Kanoën</a></li> 
         </ul>
       </li>
+      <li><a routerLink="/child3" routerLinkActive="active-link" (click)="sluitMenu()">openingstijden</a></li>
     </ul>
   </div>
 
