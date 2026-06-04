@@ -4,9 +4,9 @@
     left: 0;
     right: 0;
     width: 100%;
-    background-color: rgb(115, 202, 115);
+    background-color: darkolivegreen;
     color: black;
-    text-align: left;
+    text-align: center;
     z-index: 9999; 
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.15); 
 }
@@ -47,3 +47,13 @@
         display: none;
     }
 }
+
+#natuur-tekst {
+    color: black;     /* Maakt de tekst groen */
+    font-size: 11x;       /* Vergroot de tekst */
+    font-family: Arial;   /* Verandert het lettertype */
+    text-align: center;   /* Centreert de tekst */
+    font-style: italic;   /* Maakt de tekst schuingedrukt */
+    margin: 0 0 5px 0;    /* Compacte titels */
+    line-height: 1.3;
+    }

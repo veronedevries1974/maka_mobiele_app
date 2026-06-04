@@ -1,38 +1,66 @@
-<div class="body_parent">
-  <header>
-    <h4 class="header_h4">Prijslijst</h4>
-    <h1 class="header_h1">Hieronder vindt u onze actuele tarieven.</h1><br>
-    <img src="https://images.pexels.com/photos/33107655/pexels-photo-33107655.jpeg" alt="Belgische Ardennen">
-  </header>
+<div class="subpage-container">
   
-  <main>
-    <div class="prijslijst-layout">
-      <!-- Toont de naam vanuit de Angular component input indien aanwezig -->
-      <strong class="camping-name" *ngIf="name">{{ name }}</strong>
-      
-      <!-- Prijslijst Tabel -->
-      <table id="table1">
-        <tr class="third">
-          <th>Tarieven</th>
-          <th>Hoogseizoen per nacht</th>
-          <th>Laagseizoen per nacht</th>
-        </tr>
-        <tr>
-          <td>Kampeerweide</td>
-          <td>€ 26,50</td>
-          <td>€ 21,00</td>
-        </tr>
-        <tr>
-          <td>Camperplaats</td>
-          <td>€ 26,50</td>
-          <td>€ 26,50</td>
-        </tr>
-        <tr>
-          <td>Blokhut</td>
-          <td>€ 82,00</td>
-          <td>€ 65,50</td>
-        </tr>
-      </table>
-    </div>
-  </main>
+  <div class="body_parent">
+    <header>
+      <h4 class="header_h4">Prijslijst</h4>
+      <h1 class="header_h1">Hieronder vindt u onze actuele tarieven.</h1>
+      <br>
+      <img src="https://images.pexels.com/photos/31895266/pexels-photo-31895266.jpeg" alt="Belgische Ardennen">
+    </header>
+    
+    <main>
+      <h2>Mogelijkheden</h2>
+<p>KAMPEREN. Kom naar camping Maka met je eigen kampeermiddel, wij hebben plekken met en zonder stroom.</p>
+<br>
+<p>BLOKHUT. Op zoek naar net wat meer comfort dan een tent? Boek dan een van onze 5 blokhutten.</p>
+<br>
+<p>DAKTENT. Altijd al eens willen ervaren hoe een daktent slaapt? kom dan nu uitproberen...</p>
+<br>
+<p>BELLTENT. Basic ingerichte Belltent!</p>
+<br>
+<p>HANGMATTEN. Durf jij het aan? Huur een hangmat en geniet van het echte gevoel van basic kamperen.</p>
+<br>
+
+
+      <div class="prijslijst-layout">
+        <!-- Toont de naam vanuit de Angular component input indien aanwezig -->
+        <strong class="camping-name" *ngIf="name">{{ name }}</strong>
+        
+        <!-- Prijslijst Tabel -->
+        <table id="table1">
+          <tr class="third">
+            <th>Tarieven</th>
+            <th>Hoogseizoen per nacht</th>
+            <th>Laagseizoen per nacht</th>
+          </tr>
+          <tr>
+            <td>Kampeerweide</td>
+            <td>€ 26,50</td>
+            <td>€ 21,00</td>
+          </tr>
+          <tr>
+            <td>Camperplaats</td>
+            <td>€ 26,50</td>
+            <td>€ 26,50</td>
+          </tr>
+          <tr>
+            <td>Blokhut</td>
+            <td>€ 82,00</td>
+            <td>€ 65,50</td>
+          </tr>
+          <tr>
+            <td>Belltent</td>
+            <td>€ 250,00</td>
+            <td>€ 210,50</td>
+          </tr>
+          <tr>
+            <td>Daktent</td>
+            <td>€ 70,00</td>
+            <td>€ 60,50</td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </div>
 </div>
+

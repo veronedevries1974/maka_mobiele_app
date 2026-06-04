@@ -1,23 +1,27 @@
 <div class="page_framework"> 
   <div class="navigation"> 
     <ul> 
-      <li><a routerLink="/" (click)="sluitMenu()">home</a></li> 
-      <li><a routerLink="/prijslijst" (click)="sluitMenu()">prijslijst</a></li> 
+      <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="sluitMenu()">home</a></li> 
+      <li><a routerLink="/child" routerLinkActive="active-link" (click)="sluitMenu()">prijslijst</a></li> 
       <li>
-        <a href="#" (click)="toggleMenu($event)">activiteiten</a>
+        <!-- GECORRIGEERD: Linkt nu naar /child2 (activiteiten) en blijft actief bij subpagina's -->
+        <a routerLink="/child2" 
+           routerLinkActive="active-link" 
+           [routerLinkActiveOptions]="{ exact: false }"
+           (click)="toggleMenu($event)">
+           activiteiten
+        </a>
         <ul class="submenu" *ngIf="menuOpen">
-          <li><a routerLink="/activiteiten/wandelen" (click)="sluitMenu()">Wandelen</a></li>
-          <li><a routerLink="/activiteiten/kanoen" (click)="sluitMenu()">Kanoën</a></li> 
+          <!-- GECORRIGEERD: Paden aangepast naar de nieuwe routing-structuur -->
+          <li><a routerLink="/child2/wandelen" routerLinkActive="active-sub-link" (click)="sluitMenu()">Wandelen</a></li>
+          <li><a routerLink="/child2/kanoen" routerLinkActive="active-sub-link" (click)="sluitMenu()">Kanoën</a></li> 
         </ul>
       </li>
     </ul>
   </div>
 
   <div class="page-content">
-    <!-- Hier worden de pagina's ingeladen -->
     <router-outlet></router-outlet>
-    
-    <!-- De footer staat hieronder en wordt door Flexbox naar de bodem gedrukt -->
     <app-footer></app-footer>
   </div>
 </div>

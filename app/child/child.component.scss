@@ -1,37 +1,45 @@
-/* Zorgt dat deze specifieke Angular component het hele scherm vult en centreert */
+/* Zorgt dat de component het hele scherm vult en ALTIJD kan scrollen */
 :host {
     display: flex !important;
-    justify-content: center; /* Horizontaal centreren */
-    align-items: center;     /* Verticaal centreren */
+    flex-direction: column;  /* Zet elementen onder elkaar */
+    align-items: center;     /* Centreert de kaart horizontaal */
     width: 100vw;
     height: 100vh;
-    position: fixed;         /* Zet de component vast op het volledige scherm */
+    position: fixed;         
     top: 0;
     left: 0;
-    background-color: #e9e9e9; /* De lichte achtergrond achter de kaart */
+    background-color: lightgoldenrodyellow; 
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    
+    /* VERANDERING: Schakel hier de scrollbalk in voor de gehele pagina */
+    overflow-y: auto; 
+    padding: 40px 0;         /* Geeft ademruimte aan de boven- en onderkant */
+}
+
+/* De buitenste container uit je HTML */
+.subpage-container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* De centrale witte container van de camping info */
 .body_parent {
-    color: #333;
-    background-color: #ffffff;
-    
-    // Breedte instellingen
-    width: 90%;
-    max-width: 800px;
+    color: black;
+    background-color: lightgoldenrodyellow;
+    width: 100%;
     padding: 30px;
     box-sizing: border-box;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-
-    // Scroll functionaliteit
-    max-height: 85vh; /* Voorkomt dat de kaart groter wordt dan het scherm */
-    overflow-y: auto; /* Activeert de scrollbalk indien nodig */
+    margin-top: 20px;
     
-    display: flex;
-    flex-direction: column;
+    /* VERANDERING: We halen max-height en overflow hier weg, zodat de kaart */
+    /* zijn natuurlijke hoogte pakt en de pagina-scrollbalk gebruikt wordt. */
+    margin-bottom: 120px; /* Extra marge aan de onderkant zodat content ruim boven de footer stopt */
 }
 
 /* Header element */
@@ -43,9 +51,10 @@ header {
 /* H4 - Gecentreerd bovenaan */
 .header_h4 {
     font-size: xx-large;
-    font-style: italic;
+    font-style: normal;
     font-weight: bold;
-    background-color: #f4f4f4;
+    color: black;
+    background-color: darkolivegreen;
     padding: 1rem;
     text-align: center; 
     margin: 0 0 10px 0;
@@ -56,9 +65,10 @@ header {
 /* H1 - Gecentreerd onder de H4 */
 .header_h1 {
     font-size: large;
-    font-style: italic;
+    font-style: normal;
     font-weight: normal;
-    background-color: #f4f4f4;
+    color: black;
+    background-color: darkolivegreen;
     padding: 1rem;
     text-align: center; 
     margin: 0;          
@@ -66,26 +76,22 @@ header {
     box-sizing: border-box;
 }
 
-header img {
-    width: 50%; /* Verander dit percentage om de gewenste breedte te bepalen */
-    height: auto; /* Gewijzigd naar auto om vervorming te voorkomen */
-    display: block; /* Nodig om de afbeelding te kunnen centreren */
-    margin: 0 auto 15px auto; /* Centreert de afbeelding netjes in het midden */
-}
-
-/* Camping naam styling */
-.camping-name {
-  font-size: 20px;
-  line-height: 26px;
-  display: block;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
 /* Nettere marges voor de main teksten */
 main h2 {
     margin-top: 20px;
     margin-bottom: 5px;
+}
+main p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+header img {
+    width: 50%; 
+    height: 50%; 
+    display: block; 
+    margin: 0 auto; 
 }
 
 /* Tabel Styling */
@@ -94,21 +100,22 @@ main h2 {
   max-width: 100% !important;
   margin: 20px auto !important; 
   text-align: left;
-  background-color: aqua; 
-  border: 5px solid black;
+  color: black;
+  background-color: lightgoldenrodyellow; 
+  border: 5px solid darkolivegreen;
   border-collapse: collapse; 
+}
 
-  th {
-    padding: 10px;
-    background-color: #1e3a8a; 
-    color: #ffffff;            
-  }
+#table1 th {
+  padding: 10px;
+  background-color: darkolivegreen; 
+  color: black;            
+}
 
-  td {
-    padding: 10px; 
-  }
+#table1 td {
+  padding: 10px; 
 }
 
 .third {
-    color: blue;
+    color: darkolivegreen;
 }

@@ -3,7 +3,7 @@ body {
   padding: 0;
   width: 100%;       
   max-width: 100%;   
-  background: rgb(163, 153, 153);
+  background: lightgoldenrodyellow;
   font-family: Verdana, sans-serif;
 }
 
@@ -29,7 +29,7 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #73ca73 !important; 
+  background-color: darkolivegreen; 
   min-height: 50px; 
   margin: 0;
   padding: 0;
@@ -52,12 +52,12 @@ body {
 
 .navigation ul li a {
   text-decoration: none;
-  color: #333;
+  color: black;
   font-weight: bold;
 }
 
 .navigation ul li:hover { 
-  background-color: rgb(44, 199, 44);
+  background-color: darkolivegreen;
 }
 
 /* --- SUBMENU (UITKLAP) --- */
@@ -76,13 +76,13 @@ body {
 
 .navigation ul li .submenu li { 
   display: block; 
-  background-color: rgb(182, 204, 182);
+  background-color: darkolivegreen;
   padding: 12px 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid black;
 }
 
 .navigation ul li .submenu li:hover {
-  background-color: rgb(142, 174, 142); 
+  background-color: darkolivegreen; 
 }
 
 /* --- CONTENT ELEMENTEN --- */
@@ -95,8 +95,8 @@ body {
 }
 
 .btn-terug {
-  background-color: #333;
-  color: white;
+  background-color: darkolivegreen;
+  color: lightgoldenrodyellow;
   border: none;
   padding: 10px 15px;
   font-weight: bold;
@@ -106,7 +106,7 @@ body {
 }
 
 .btn-terug:hover {
-  background-color: rgb(44, 199, 44);
+  background-color: darkolivegreen;
 }
 
 /* --- IONIC EN CONTAINER INSTELLINGEN --- */
@@ -151,8 +151,8 @@ ion-content {
   max-width: 90% !important;
   margin: 20px auto !important; 
   text-align: left;
-  background-color: aqua;       
-  border: 5px solid black;      
+  background-color: lightgoldenrodyellow;       
+  border: 5px solid darkolivegreen;      
   border-collapse: collapse; 
   font-size: 14px;
   box-sizing: border-box; 
@@ -160,12 +160,12 @@ ion-content {
 
 .prijslijst-layout #table1 th {
   padding: 10px;
-  background-color: #1e3a8a;  
-  color: #ffffff;            
-  border: 1px solid black;
+  background-color: lightgoldenrodyellow;  
+  color: black;            
+  border: 1px solid darkolivegreen;
 }
 
 .prijslijst-layout #table1 td {
   padding: 10px; 
-  border: 1px solid black;
+  border: 1px solid darkolivegreen;
 }

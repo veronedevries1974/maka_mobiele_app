@@ -1,37 +1,44 @@
-/* Zorgt dat deze specifieke Angular component het hele scherm vult en centreert */
+/* Zorgt dat deze specifieke Angular component het hele scherm vult */
 :host {
     display: flex !important;
-    justify-content: center; /* Horizontaal centreren */
-    align-items: center;     /* Verticaal centreren */
+    flex-direction: column;  /* Zet elementen onder elkaar */
+    align-items: center;     /* Centreert de elementen horizontaal */
     width: 100vw;
     height: 100vh;
     position: fixed;         /* Zet de component vast op het volledige scherm */
     top: 0;
     left: 0;
-    background-color: #e9e9e9; /* De lichte achtergrond achter de kaart */
+    background-color: lightgoldenrodyellow; 
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    
+    /* GECORRIGEERD: Scrollbalk ingeschakeld op het hoofdscherm */
+    overflow-y: auto; 
+    padding: 40px 0;         /* Ruimte aan de absolute top en bodem van het scherm */
+}
+
+/* De buitenste container uit de HTML */
+.subpage-container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* De centrale witte container van de camping info */
 .body_parent {
-    color: #333;
-    background-color: #ffffff;
-    
-    // Breedte instellingen
-    width: 90%;
-    max-width: 800px;
+    color: black;
+    background-color: lightgoldenrodyellow;
+    width: 100%;
     padding: 30px;
     box-sizing: border-box;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-
-    // Scroll functionaliteit
-    max-height: 85vh; /* Voorkomt dat de kaart groter wordt dan het scherm */
-    overflow-y: auto; /* Activeert de scrollbalk indien nodig */
+    margin-top: 20px;
     
-    display: flex;
-    flex-direction: column;
+    /* GECORRIGEERD: Ruime marge aan de onderkant zodat content ver boven de footer stopt */
+    margin-bottom: 120px; 
 }
 
 /* Header element */
@@ -45,7 +52,8 @@ header {
     font-size: xx-large;
     font-style: italic;
     font-weight: bold;
-    background-color: #f4f4f4;
+    color: black;
+    background-color: darkolivegreen;
     padding: 1rem;
     text-align: center; 
     margin: 0 0 10px 0;
@@ -56,9 +64,10 @@ header {
 /* H1 - Gecentreerd onder de H4 */
 .header_h1 {
     font-size: large;
-    font-style: italic;
-    font-weight: normal;
-    background-color: #f4f4f4;
+    font-style: normal;
+    font-weight: bold;
+    color: black;
+    background-color: darkolivegreen;
     padding: 1rem;
     text-align: center; 
     margin: 0;          
@@ -78,8 +87,17 @@ main p {
 }
 
 header img {
-    width: 50%; /* Verander dit percentage om de gewenste breedte te bepalen */
-    height: 50%; /* Zorgt ervoor dat de verhoudingen van de afbeelding kloppen */
-    display: block; /* Nodig om de afbeelding te kunnen centreren */
-    margin: 0 auto; /* Centreert de afbeelding netjes in het midden */
+    width: 50%; 
+    height: 50%; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+.activiteit {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    font-weight: lighter;
+    font-style: italic;
+    color: darkolivegreen;
+    text-align: center;
 }
